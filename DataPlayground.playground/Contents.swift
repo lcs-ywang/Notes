@@ -1,6 +1,7 @@
 import Cocoa
 
 var str = "Hello, playground"
+
 //Data types
 
 //What is the UInt 8 type
@@ -15,3 +16,4 @@ UInt8.min
 //in a 8 bit value
 //
 //...the first digit counts for 2
+
