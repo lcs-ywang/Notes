@@ -31,62 +31,96 @@ import Cocoa
 //done- because the decimal value left is 0
 1/2
 
+//Enumertion
+//
+//An enumerationsiply lists posibilities (cases)
+//The : Int ... that defines the type of the raw value associated with a case
+//
+//This is another example of abstraction
+// - hides complexidty
+//Makes the call site easier to read
+// e.g.: get representation(of: 17, inBase: .Binary  )
+enum NumberSystemBase: Int {
+    case binary = 2
+    case octal = 8
+    case hexadeciml = 16
+}
 
-//Creates a constant with the value 0f 76
-//A sonstant cannot be changed once started
-let valueToConvert = 76
-//Create a variable with the value of "valueToConvert"
-var decimalValueLeftToConvert = valueToConvert
-//This createa an emplty string
-//A string is just text, like "hello"
-var binaryReperesentation = ""
-
-// The abstraction we will use is a loop
-//Our end condition is that the decimalValueLeftToConvert is equal to Zero
-//So long as the Condition is true, the block of code surrounded by the { } brackets will be run reapidly
-while decimalValueLeftToConvert > 0 {
-
-// Get the next decimal binary digit
-
-    let nextBinaryDigit = decimalValueLeftToConvert % 2
+// Get the alternate representation of a value in a different base
+func getRepresentation(of valueToConvert: Int, inBase base: NumberSystemBase) -> String {
     
-    //Add that new digit to the binary representation
-    //Swift is a SECURITY TYPED language
-    //It DOES NOT automatically sovernt data types
-    //So, to make the Int into s string, we need to specify this
 
-    binaryReperesentation = String(nextBinaryDigit) + binaryReperesentation
+    // Create a variable with the value of "valueToConvert"
+    // A variable CAN be changed once created
+    var decimalValueLeftToConvert = valueToConvert
+    // This creates an empty string
+    // A string is just text, like "hello"
+    var representation = ""
 
-    decimalValueLeftToConvert = decimalValueLeftToConvert / 2
-}
-
-binaryReperesentation
-
-func getBinaryRepresentation(of valueToconvert: Int ) -> String{
-
-    //Create a variable with the value of "valueToConvert"
-    //a variable can be changed once created
-    var decimalValueLeftToConvert = valueToconvert
-
-    //This createa an emplty string
-    //A string is just text, like "hello"
-    var binaryReperesentation = ""
-    // The abstraction we will use is a loop
-    //Our end condition is that the decimalValueLeftToConvert is equal to Zero
-    //So long as the Condition is true, the block of code surrounded by the { } brackets will be run reapidly
+    // The abstraction we will use is a LOOP
+    // Our END CONDITION is that the decimalValueLeftToConvert is equal to zero
+    // So long as the CONDITION is true, the block of code surrounded by the {  } brackets will be run repeatedly
     while decimalValueLeftToConvert > 0 {
-        // Get the next decimal binary digit
-        let nextBinaryDigit = decimalValueLeftToConvert % 2
-        //Add that new digit to the binary representation
-        //Swift is a SECURITY TYPED language
-        //It DOES NOT automatically sovernt data types
-        //So, to make the Int into s string, we need to specify this
-        binaryReperesentation = String(nextBinaryDigit) + binaryReperesentation
-        decimalValueLeftToConvert = decimalValueLeftToConvert / 2
+        
+
+        // Get the next digit
+        let nextDigit = decimalValueLeftToConvert % base.rawValue
+        
+
+        // Add that new digit to the representation
+        // Swift is a STRICTLY TYPED language
+        // It DOES NOT automatically convert data types
+        // So, to make the Int into a String, we need to specify this
+        //
+        //If statement
+        //
+        //check a condition - when true, do one thing
+        //                  - when false, do something else
+        if base == .hexadeciml {
+            // we know the base is hexadecimal (condition was TRUE)
+            
+            //Carefully set the next digit
+            // when something other use the ABCEF
+            //
+            //Switch statement evaluates some value
+            //
+            //And take different actions depend on the value
+        
+            switch nextDigit {
+            case 0...9:
+                representation = String(nextDigit) + representation
+            case 10:
+                representation = "A" + representation
+            case 11:
+                representation = "B" + representation
+            case 12:
+                representation = "C" + representation
+            case 13:
+                representation = "D" + representation
+            case 14:
+                representation = "E" + representation
+            case 15:
+                representation = "F" + representation
+            default:
+                break
+            }
+        } else {
+            representation = String(nextDigit) + representation
+        }
+            // Get the decimal value left to convert
+        decimalValueLeftToConvert = decimalValueLeftToConvert / base.rawValue
+
+    }
+    
+
+    return representation
+    
+
 }
 
-return binaryReperesentation
-}
-
-
-
+// Call, or use the function
+getRepresentation(of: 17, inBase: .binary)
+getRepresentation(of: 17, inBase: .octal)
+getRepresentation(of: 17, inBase: .hexadeciml)
+//
+getRepresentation(of: 28, inBase: .hexadeciml)
