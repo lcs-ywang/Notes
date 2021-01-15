@@ -27,6 +27,8 @@
 		3C22550E25AB859000B768EB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3C22551625AB862300B768EB /* NumberSystems.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NumberSystems.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3CA5C08D25ACBB100001646C /* DataPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3CF0E47B25B2062A003471E0 /* firststeps.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = firststeps.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3CF0E47C25B2063D003471E0 /* ALookAtStrings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ALookAtStrings.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,8 @@
 		3C22550225AB859000B768EB = {
 			isa = PBXGroup;
 			children = (
+				3CF0E47C25B2063D003471E0 /* ALookAtStrings.playground */,
+				3CF0E47B25B2062A003471E0 /* firststeps.playground */,
 				3CA5C08D25ACBB100001646C /* DataPlayground.playground */,
 				3C22551625AB862300B768EB /* NumberSystems.playground */,
 				3C22550D25AB859000B768EB /* Notes */,
