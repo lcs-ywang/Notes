@@ -124,3 +124,34 @@ getRepresentation(of: 17, inBase: .octal)
 getRepresentation(of: 17, inBase: .hexadeciml)
 //
 getRepresentation(of: 28, inBase: .hexadeciml)
+
+// The value we are converting
+let value = "1011011"
+
+//What base are we coverting from
+let base = 2.0
+
+//The exponent value at the rightmost digit
+var exponent = 0.0
+
+//the surrent sum in decimal
+var decimalEquivalent = 0.0
+
+//Iterate over each character
+//From right to left
+for character in value.reversed() {
+    //get the current degit as a double (decimal)
+    if let digit = Double(String(character)) {
+        
+        //Add the current sum
+        decimalEquivalent += digit * pow(base, exponent)
+        
+        //Increment the exponent (+1)
+        exponent += 1
+        
+    }
+
+}
+
+//What's the result
+ decimalEquivalent

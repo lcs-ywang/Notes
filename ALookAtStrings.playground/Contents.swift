@@ -141,8 +141,12 @@ print("Second last character is: \(secondLast)")
  */
 // This will separate the output from the examples above from your work
 print("===== Exercise 1 begins =====")
+let name = "Luck Wang"
+for singlecharacter in name{
+    print(singlecharacter)
+}
 
-
+print("====================")
 
 /*:
 ### Exercise 2
@@ -178,4 +182,5 @@ Say that you wish to encrypt the word `pen` using a *rightward shift of three ch
 // Create the starting phrase
 let plainText = "pen"
 
-// Encrypt the starting phrase
+
+}
